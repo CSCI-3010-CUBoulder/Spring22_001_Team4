@@ -1,4 +1,5 @@
 /* String functions section */
+#include <iostream>
 #include <string>
 #include <vector>
 
