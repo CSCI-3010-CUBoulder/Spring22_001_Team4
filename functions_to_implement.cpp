@@ -117,10 +117,24 @@ std::vector<double> VectorTimesN(std::vector<double> v, double n);
 
 // takes in two doubles and returns a vector of size n with
 // values n*1, n*2, n*3... up to n*m
-std::vector<double> Multiples(double n, double m);
+std::vector<double> Multiples(double n, double m)
+{
+    vector<double> vect;
+    for (int i = 1;i <=m; i++)
+    {
+        vect.push_back(i*n);
+    }
+    return vect;
+}
 
 // returns -1 if the number is negative and 1 if positive
-double Sign(double num);
+double Sign(double num)
+{
+    if (num >= 0)
+        return 1;
+    else    
+        return -1;
+}
 
 // adds n to each element of the vector
 std::vector<int> AddN(std::vector<int>, int n);
