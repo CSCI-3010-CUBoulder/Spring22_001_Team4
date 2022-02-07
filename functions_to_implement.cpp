@@ -1,4 +1,7 @@
 /* String functions section */
+#include <iostream>
+#include <string>
+#include <vector>
 
 // Splits a single string on separator into a vector of strings
 std::vector<std::string> Split(std::string whole, std::string separator)
@@ -12,7 +15,12 @@ std::string RemoveAllSubstrings(std::string s1, std::string s2);
 std::string RemoveFirstSubstring(std::string s1, std::string s2);
 
 // Joins all strings in a vector together, using the glue string in between them
-std::string Join(std::vector<std::string> pieces, std::string glue);
+std::string Join(std::vector<std::string> pieces, std::string glue) {
+    std::string final = pieces[0];
+    for (int i=1; i<pieces.size(); i++)
+        final += glue + pieces[i];
+    return final;
+}
 
 // takes two vectors of integers, a and b. The function then removes elements from a if they are also in b.
 // If the integer is in b, but not in a, nothing happens.
@@ -20,7 +28,12 @@ std::vector<int> MatchVectors(std::vector<int> a, std::vector<int> b);
 
 // divides an input integer by 2 until it is impossible to do so, then returns the final number.
 // (16 = 2 * 2 * 2 * 2 * 1 -> 1, 7 -> 7, 26 = 2 * 13 -> 13, 52 = 2 * 2 * 13 -> 13)
-int RemoveTwos(int original);
+int RemoveTwos(int original) {
+    while ( original % 2 == 0) {
+        original = original / 2;
+    }
+    return original;
+}
 
 // takes a vector of integers and removes all elements evenly divisible by the passed in int
 std::vector<int> MultiplesFilter(std::vector<int>, int divides_by);
