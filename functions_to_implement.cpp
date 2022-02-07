@@ -119,7 +119,7 @@ std::vector<double> VectorTimesN(std::vector<double> v, double n);
 // values n*1, n*2, n*3... up to n*m
 std::vector<double> Multiples(double n, double m)
 {
-    vector<double> vect;
+    std::vector<double> vect;
     for (int i = 1;i <=m; i++)
     {
         vect.push_back(i*n);
